@@ -55,15 +55,15 @@ const actions = {
           reject('Verification failed, please Login again.')
         }
 
-        const { authorities, user_name } = data
-
+        const { roles, user_name } = data
+        console.log(roles)
         // roles must be a non-empty array
-        if (!authorities || authorities.length <= 0) {
-          console.log(authorities)
+        if (!roles || roles.length <= 0) {
+          console.log(roles)
           reject('getInfo: roles must be a non-null array!')
         }
 
-        commit('SET_ROLES', authorities)
+        commit('SET_ROLES', roles)
         commit('SET_NAME', user_name)
         commit('SET_AVATAR', 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif')
         commit('SET_INTRODUCTION', 'test')

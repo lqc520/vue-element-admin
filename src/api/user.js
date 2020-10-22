@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/api/permit/wlkj/getToken',
+    url: '/api/permit/wlkj/login',
     method: 'post',
     data
   })
@@ -11,7 +11,7 @@ export function login(data) {
 export function getInfo(token) {
   token = token.substring(6)
   return request({
-    url: '/api/permit/checkToken',
+    url: '/api/permit/getInfo',
     method: 'get',
     params: { token }
   })
@@ -19,7 +19,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/vue-element-admin/user/logout',
+    url: '/api/permit/logout',
     method: 'post'
   })
 }
