@@ -2,15 +2,16 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-element-admin/user/login',
+    url: '/api/permit/wlkj/getToken',
     method: 'post',
     data
   })
 }
 
 export function getInfo(token) {
+  token = token.substring(6)
   return request({
-    url: '/vue-element-admin/user/info',
+    url: '/api/permit/checkToken',
     method: 'get',
     params: { token }
   })
